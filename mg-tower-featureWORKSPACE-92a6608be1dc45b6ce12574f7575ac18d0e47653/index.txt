@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Magnus Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="./global/css/mg-loading.css">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./vendor/css/theme.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/bootstrap.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/bootstrap-theme.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/toastr.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/font-awesome.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/simple-line-icons.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/primeui-ng-all.min.css?v=0.0.2">
+    <link rel="stylesheet" href="./vendor/css/flatpickr.material_blue.min.css?v=0.0.2">
+    <link rel="stylesheet" href="./global/css/components-md.css?v=0.0.2">
+    <link rel="stylesheet" href="./global/css/plugins-md.css?v=0.0.2">
+    <link rel="stylesheet" href="./global/css/mg-loading.css?v=0.0.2">
+    <link rel="stylesheet" href="./css/layout.css?v=0.0.2">
+    <link rel="stylesheet" href="./css/themes/blue.css?v=0.0.2">
+    <link rel="stylesheet" href="./pages/css/login-2.css?v=0.0.2">
+    <link rel="stylesheet" href="./apps/css/todo.css?v=0.0.2">
+    <!-- endinject -->
+
+    <script>
+      if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+
+
+
+    <script>
+      if (window.module)
+        module = window.module;
+    </script>
+
+    <!-- inject:js -->
+    <script src="./lib/system-polyfills.src.js?v=0.0.2"></script>
+    <script src="./lib/zone.js?v=0.0.2"></script>
+    <script src="./lib/Reflect.js?v=0.0.2"></script>
+    <script src="./lib/es6-shim.js?v=0.0.2"></script>
+    <script src="./lib/system.src.js?v=0.0.2"></script>
+    <script src="./lib/socket.io.js?v=0.0.2"></script>
+    <script src="./lib/libs-ng2-bundle.js?v=0.0.2"></script>
+    <script src="./lib/magnus-app.js?v=0.0.2"></script>
+    <script src="./lib/magnus-front.js?v=0.0.2"></script>
+    <script src="./lib/magnus-metadata.js?v=0.0.2"></script>
+    <script src="./lib/tower-base-client.js?v=0.0.2"></script>
+    <script src="./vendor/js/jquery.js?v=0.0.2"></script>
+    <script src="./vendor/js/bootstrap.js?v=0.0.2"></script>
+    <script src="./vendor/js/jquery-ui.js?v=0.0.2"></script>
+    <script src="./vendor/js/primeui.js?v=0.0.2"></script>
+    <script src="./vendor/js/toastr.min.js?v=0.0.2"></script>
+    <script src="./vendor/js/flatpickr.min.js?v=0.0.2"></script>
+    <script src="./init.js?v=0.0.2"></script>
+    <!-- endinject -->
+  </head>
+  <body>
+    <mg-app>
+      <div class="container">
+        <div class="row">
+          <div id="loading">
+            <ul class="bokeh">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </mg-app>
+
+
+    <!-- head:js -->
+    <!-- endinject -->
+
+  </body>
+</html>
+
+
+//================================init==============================================
+
+// var ctn = require('./config/content-config.json');
+
+// window.
+// fetch('./config/content-config.json')
+//   .then(function(response) {
+//     return response.json();
+//   }).then(function(mapObj) {
+//     window['content-config'] = mapObj;
+//     window['content-config'] = mapObj;
+//     mapObj.systemjsConfig.bundles.bundleLib.push('@ngrx/core/*.js', '@ngrx/core.js', '@ngrx/store.js', '@ngrx/effects.js');
+//     mapObj.systemjsConfig.bundles['magnus-front'].push('angular2-jwt.js');
+//     System.config(mapObj.systemjsConfig);
+//     System.import('bootstrap')
+//       .catch(function(e) {
+//         return console.error(e, 'Report this error at https://github.com/mgechev/angular2-seed/issues');
+//       });
+//   });
+
+var SystemJS = require('systemjs');
+var electron = require('electron');
+var app = electron.app;
+var BrowserWindow = electron.BrowserWindow;
+// console.log(electron.desktopCapturer);
+// console.log(BrowserWindow);
+
+SystemJS.import('./config/content-config.js').then(function(m) {
+    console.log(m.r);
+    return m.r;
+  })
+  .then(function(mapObj) {
+    console.log('second !');
+    console.log(mapObj);
+
+    window['content-config'] = mapObj;
+    window['content-config'] = mapObj;
+    mapObj.systemjsConfig.bundles.bundleLib.push('@ngrx/core/*.js', '@ngrx/core.js', '@ngrx/store.js', '@ngrx/effects.js');
+    mapObj.systemjsConfig.bundles['magnus-front'].push('angular2-jwt.js');
+    System.config(mapObj.systemjsConfig);
+    System.import('./bootstrap.js')
+      .catch(function(e) {
+        return console.error(e, 'Report this error at https://github.com/mgechev/angular2-seed/issues');
+      });
+  }).catch(function(e) {
+  return console.log('KO')
+});
+
+//================================bootstrap==============================================
+
+"use strict";
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var angular2_jwt_1 = require('angular2-jwt');
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
+var magnus_app_1 = require('./lib/magnus-app');
+var services_1 = require('magnus-front/services');
+var tower_base_client_1 = require('./lib/tower-base-client');
+var app_features_1 = require('./app.features');
+var app_routes_1 = require('./app.routes');
+var plugin_service_1 = require('./services/plugin.service');
+function findHome(appRoutes) {
+    return appRoutes.find(function (route) { return route.path === 'home'; });
+}
+var contentConfig = window['content-config'];
+var homeRoute = findHome(magnus_app_1.MAGNUS_APP_ROUTES);
+homeRoute.children = homeRoute.children.concat(app_routes_1.TOWER_ROUTES);
+var listPlugin = ['mg-git-plugin', 'mg-npm-plugin', 'mg-exe-plugin'];
+platform_browser_dynamic_1.bootstrap(magnus_app_1.MgAppComponent, [
+    core_1.provide('login.api', { useValue: '' }),
+    core_1.provide('users.api', { useValue: '' }),
+    core_1.provide('endpoints', { useValue: contentConfig.endPoints }),
+    core_1.provide('end.point.url', { useValue: '/endpoints' }),
+    core_1.provide('menu.url', { useValue: '/menu' }),
+    core_1.provide('app.config', { useValue: contentConfig }),
+    core_1.provide('ENV', { useValue: 'DEV' }),
+    core_1.provide('app.id', { useValue: '5663494513ab58d7391941fc' }),
+    services_1.provideMgStore([services_1.NGRX_CONFIG]),
+    services_1.provideSocket({
+        channel: [{ endPoint: 'config.api', name: 'tasks' }]
+    }),
+    core_1.provide(angular2_jwt_1.AuthHttp, {
+        useFactory: function (http) {
+            return new angular2_jwt_1.AuthHttp(new angular2_jwt_1.AuthConfig({
+                tokenName: 'token',
+                globalHeaders: [{
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }],
+            }), http);
+        },
+        deps: [http_1.Http]
+    }),
+    services_1.provideNotification({
+        feeds: [{
+                url: 'tasks',
+                title: 'Feed1',
+                icon: 'icon-bell'
+            },
+            {
+                url: 'notifications',
+                title: 'Notifications',
+                icon: 'icon-bell'
+            }]
+    }),
+    router_1.provideRouter(magnus_app_1.MAGNUS_APP_ROUTES),
+    magnus_app_1.MAGNUS_APP_INJECTABLES,
+    http_1.HTTP_PROVIDERS,
+    core_1.provide('features', { useValue: app_features_1.FEATURES }),
+    core_1.provide('MAGNUS_APP_ROUTES', { useValue: magnus_app_1.MAGNUS_APP_ROUTES }),
+    core_1.provide('LIST_PLUGINS', { useValue: listPlugin }),
+    services_1.magnetInjectables,
+    tower_base_client_1.PLUGINS_ARCHITECTUR_INJECTABLES,
+    core_1.provide(common_1.LocationStrategy, { useClass: common_1.HashLocationStrategy }),
+    forms_1.provideForms(),
+    forms_1.disableDeprecatedForms(),
+    plugin_service_1.PluginService
+]).then(function (success) { return console.log('Bootstrap successful'); }, function (error) { return console.error(error); });
+;
+
+//================================content-config==============================================
+
+var join = require('path').join;
+
+export var r = {
+  "appContent": [{
+    "title": "Features for template-ui",
+    "icon": "template-ui",
+    "childs": [{
+      "name": "Examples",
+      "displayName": "Examples",
+      "entryPoint": {
+        "path": "/example",
+        "as": "Examples",
+        "component": "AppComponent",
+        "package_path": "./components/app.js"
+      },
+      "homePage": "./Examples"
+    }]
+  }],
+  "sharedPackages": ["magnuscli-shared"],
+  "endPoints": [{
+    "endPoint": "login.api",
+    "url": "http://identity.magnus-ci.duckdns.org"
+  }, {
+    "endPoint": "config.api",
+    "url": "http://localhost:3000"
+  }],
+  "systemjsConfig": {
+    "baseURL": join(__dirname),
+    "map": {
+      "rxjs": "rxjs"
+    },
+    "bundles": {
+      "magnus-front": ["magnus-front/inputs.js", "magnus-front/new-inputs.js", "magnus-front/shared.js", "magnus-front/directives.js", "magnus-front/components.js", "magnus-front/services.js"],
+
+      "bundleLib": ["immutable.js", "lodash.js", "moment.js", "@angular/*.js", "@angular2-material/*.js",
+        "primeng/primeng"
+      ]
+    },
+    "paths": {
+      "magnus-front":  "lib/magnus-front.js",
+      "tower-base-client":  "lib/tower-base-client.js",
+      "magnus-app":  "lib/magnus-app.js",
+      "magnus-metadata":  "lib/magnus-metadata.js",
+      "bundleLib":  "lib/libs-ng2-bundle.js",
+      "socket.io-client":  "lib/socket.io.js",
+      "magnuscli-shared":  "app/magnuscli-shared.js",
+      "mg-git-plugin":  "plugins/mg-git-plugin.js",
+      "mg-npm-plugin":  "plugins/mg-npm-plugin.js",
+      "mg-exe-plugin":  "plugins/mg-exe-plugin.js"
+    },
+    "defaultJSExtensions": true
+  }
+}
+
+//console.log('hello');

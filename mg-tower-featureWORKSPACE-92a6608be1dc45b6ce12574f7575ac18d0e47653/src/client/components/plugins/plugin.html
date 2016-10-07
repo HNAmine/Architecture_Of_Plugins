@@ -1,0 +1,24 @@
+<div class="portlet box red">
+  <div class="portlet-title">
+
+    <div class="caption">
+      <i class="fa fa-cogs"></i>{{title}}
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li *ngFor="let plugin of listConfigPlugins">
+        <a [routerLink]="['/home/workspace/'+project?.name,plugin.projectName]" routerLinkActive="active">
+          {{plugin.displayName}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="portlet-body">
+    <div class="tab-content">
+      <mg-package-detail [project]="project"></mg-package-detail>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

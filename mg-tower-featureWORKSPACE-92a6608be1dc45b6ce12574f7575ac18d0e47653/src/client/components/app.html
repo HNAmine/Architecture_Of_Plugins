@@ -1,0 +1,28 @@
+<br>
+<div class="row">
+  <div class="col-lg-4">
+    <center>
+      <div class="btn-group">
+        <div class="btn-group btn-group-lg btn-group-solid">
+          <button type="button" class="btn red" style="border-radius:0px;">
+            <i class="fa fa-filter"></i>
+          </button>
+          <button *ngFor="let type of project_types" type="button" class="btn red" style="border-radius:0px;" [class.active]="type.choosed" (click)="filterWorkSpace(type)">{{type.label}}</button>
+        </div>
+      </div>
+    </center>
+    <mg-list title="Magnus Workspace">
+    <li mt-list-item *ngFor="let project of filter_projects">
+      <div class="list-todo-icon bg-white">
+        <i class="fa" [class.fa-folder]="executedProject?.name !== project?.name" [class.fa-folder-open]="executedProject?.name === project?.name"></i>
+      </div>
+      <mg-list-item [data]="project" (selected)="selectProject($event)">
+        <mg-list-item-title [title]="project.name"></mg-list-item-title>
+      </mg-list-item>
+    </li>
+  </mg-list>
+</div>
+<div class="col-lg-8">
+  <router-outlet></router-outlet>
+</div>
+</div>

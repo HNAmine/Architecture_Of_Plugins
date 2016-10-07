@@ -1,0 +1,17 @@
+<a (click)="toggle()" [class.collapsed]="!isOpen" class="list-toggle-container collapsed">
+  <div class="list-toggle done uppercase">
+    <ng-content select="mg-list-item-title"></ng-content>
+    <div class="pull-right bold">
+      <i class="fa fa-eye"></i>
+    </div>
+  </div>
+</a>
+
+<div class="task-list panel-collapse collapse" [class.in]="isOpen">
+  <ul>
+    <ng-content select="mg-list-sub-item-details"></ng-content>
+  </ul>
+
+  <ng-content select="mg-list-item-footer"></ng-content>
+
+</div>

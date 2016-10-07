@@ -1,0 +1,26 @@
+<div class="mt-element-list">
+  <div class="mt-list-head list-todo red">
+    <div class="list-head-title-container">
+      <h3 class="list-title">{{title}}</h3>
+      <div class="list-head-count">
+        <div class="list-head-count-item">
+          <i class="fa fa-check"></i>
+          15</div>
+        <div class="list-head-count-item">
+          <i class="fa fa-cog"></i>
+          34</div>
+      </div>
+    </div>
+    <a>
+      <div class="list-count pull-right red-mint">
+        <i class="fa fa-plus"></i>
+      </div>
+    </a>
+  </div>
+  <div class="mt-list-container list-todo">
+    <div class="list-todo-line"></div>
+    <ul>
+      <ng-content select="li[mt-list-item]"></ng-content>
+    </ul>
+  </div>
+</div>

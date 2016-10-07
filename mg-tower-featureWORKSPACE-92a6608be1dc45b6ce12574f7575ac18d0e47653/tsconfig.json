@@ -1,0 +1,59 @@
+{
+  "version": "1.8.9",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "built/es5"
+  },
+  "filesGlob": [
+    "typings/index.d.ts",
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "files": [
+    "typings/index.d.ts",
+    "src/client/app.features.ts",
+    "src/client/app.routes.ts",
+    "src/client/bootstrap.ts",
+    "src/client/components/app.ts",
+    "src/client/components/list/list_item_footer.ts",
+    "src/client/components/list/list_item_title.ts",
+    "src/client/components/list/list_item.ts",
+    "src/client/components/list/list_sub_item_details.ts",
+    "src/client/components/list/list.ts",
+    "src/client/components/list/mt_list_item.ts",
+    "src/client/components/plugin-holder/plugin-holder.component.ts",
+    "src/client/components/plugins/package-detail/package-detail.component.ts",
+    "src/client/components/plugins/plugin.ts",
+    "src/client/components/test.ts",
+    "src/client/init_desktop.ts",
+    "src/client/init.ts",
+    "src/client/services/plugin.service.ts",
+    "src/server/app.ts",
+    "src/server/event_manager/event_manager.ts",
+    "src/server/index.ts",
+    "src/server/plugins_controller/plugins_controller.ts",
+    "src/server/plugins_manager/plugins_manager.ts",
+    "src/server/serve_static_plugin/serve_static_options.ts",
+    "src/server/serve_static_plugin/serve_static_plugin.ts",
+    "src/server/serve_static_plugin/serve_static.ts",
+    "src/server/serve_static_plugin/tiny_warpper.ts",
+    "src/server/workspace_controller/workspace_controller.ts",
+    "src/server/workspace_plugin/workspace_plugin.ts",
+    "test/jasmine_methods.ts",
+    "test/test.ts"
+  ]
+}

@@ -1,0 +1,12 @@
+<pre class="language-" [class.answerform]="scrolled" style="border-radius:0px;">
+  <code class="language- break-word">
+    <div *ngFor="let log of logs;let i = index;let l = last" style="background-color: rgb(0,0,0);">
+      <span [ngClass]="{'white': !l,'red': l}">
+        <hr *ngIf="separated && i!=0" class="dash">#{{log}}
+      </span>
+    </div>
+<center>
+  <span class="red" *ngIf="load">LOADING...</span><i class="fa fa-refresh fa-spin red" aria-hidden="true" style="font-size: 24px;" *ngIf="load"></i>
+</center>
+</code>
+</pre>

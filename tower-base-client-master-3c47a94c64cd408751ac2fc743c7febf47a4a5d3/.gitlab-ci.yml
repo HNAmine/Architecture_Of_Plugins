@@ -1,0 +1,46 @@
+image: registry.magnus-ci.duckdns.org/magnus-tooling/mg-node-base-container:latest
+
+before_script:
+  - npm -q install
+
+stages:
+  - build
+  - test
+  - deploy
+  - release
+
+cache:
+  key: "$CI_BUILD_REF_NAME"
+  untracked: true
+  paths:
+    - node_modules/
+    - built/
+
+
+build:
+  stage: build
+  script:
+    - node_modules/.bin/gulp clean
+    - node_modules/.bin/gulp build
+  only:
+    - develop
+
+pages:
+  stage: deploy
+  script:
+    - node_modules/.bin/gulp typedoc
+    - mkdir -p public
+    - cp -r built/package/docs/** public/
+  artifacts:
+    paths:
+    - public
+  only:
+    - tags
+
+publish:
+  stage: deploy
+  script:
+    - node_modules/.bin/gulp package
+    - npm publish built/package
+  only:
+    - tags

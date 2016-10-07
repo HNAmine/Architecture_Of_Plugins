@@ -1,0 +1,113 @@
+{
+  "paths": {
+    "immutable": "node_modules/immutable/dist/immutable.js",
+    "moment": "node_modules/moment/moment.js",
+    "lodash": "node_modules/lodash/index.js",
+    "rxjs": "node_modules/rxjs/bundles/Rx.js",
+    "magnus-metadata": "node_modules/magnus-metadata/bundle/magnus-metadata.js",
+    "socket.io-client": "node_modules/socket.io-client/socket.io.js",
+    "@angular/core": "node_modules/@angular/core/index.js",
+    "@angular/core/*": "node_modules/@angular/core/*.js",
+    "@angular/http": "node_modules/@angular/http/index.js",
+    "@angular/compiler": "node_modules/@angular/compiler/index.js",
+    "@angular/common": "node_modules/@angular/common/index.js",
+    "@angular/platform-browser": "node_modules/@angular/platform-browser/index.js",
+    "@angular/platform-browser-dynamic": "node_modules/@angular/platform-browser-dynamic/index.js",
+    "@angular/router-deprecated": "node_modules/@angular/router-deprecated/index.js",
+    "@angular/router": "node_modules/@angular/router/index.js",
+    "@angular/*": "node_modules/@angular/*.js",
+    "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt.js",
+    "@ngrx/core/*": "node_modules/@ngrx/core/*.js",
+    "@ngrx/store": "node_modules/@ngrx/store/index.js",
+    "@ngrx/effects": "node_modules/@ngrx/effects/index.js",
+    "tower-base-client": "built/es5/src/index.js"
+  },
+  "meta": {
+    "@ngrx/core": {
+      "format": "cjs",
+      "build": false
+    },
+    "@ngrx/effects": {
+      "format": "cjs",
+      "build": false
+    },
+    "@ngrx/store": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/*": {
+      "format": "cjs",
+      "build": false
+    },
+    "magnus-front/*": {
+      "format": "cjs",
+      "build": true
+    },
+    "moment": {
+      "format": "cjs",
+      "build": false
+    },
+    "socket.io-client": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/core": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/core/*": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/compiler": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/http": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/platform-browser-dynamic": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/router-deprecated": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/router": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/common": {
+      "format": "cjs",
+      "build": false
+    },
+    "@angular/platform-browser": {
+      "format": "cjs",
+      "build": false
+    },
+    "magnus-metadata": {
+      "format": "cjs",
+      "build": false
+    },
+    "rxjs": {
+      "format": "cjs",
+      "build": false
+    },
+    "rxjs/*": {
+      "format": "cjs",
+      "build": false
+    },
+    "immutable": {
+      "format": "cjs",
+      "build": false
+    },
+    "lodash": {
+      "format": "cjs",
+      "build": false
+    }
+  },
+  "defaultJSExtensions": true
+
+}

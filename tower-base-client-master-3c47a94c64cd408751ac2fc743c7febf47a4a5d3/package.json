@@ -1,0 +1,46 @@
+{
+  "name": "tower-base-client",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "pre-commit": [
+    "validate"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "package": "gulp package",
+    "validate": "gulp validate",
+    "pub": "gulp package && gulp typedoc && npm publish built/package",
+    "test": "karma",
+    "init": "typings install",
+    "reinstall": "rimraf node_modules && npm cache clean && npm install"
+  },
+  "mgConfig": {
+    "moduleType": "ui",
+    "bundleName": "tower-base-client",
+    "systemjsBundle": "tower-base-client",
+    "bundleLocation": "bundle/tower-base-client.js"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.magnus-ci.duckdns.org/repository/magnus-npm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/magnus-tooling/magnus-front.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/magnus-tooling/magnus-front/issues"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "magnus-metadata": "0.0.4",
+    "magnus-vendor-lib": "^1.0.9",
+    "magnus-front": "1.0.17-dev"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "mg-tasks": "0.0.42"
+  },
+  "codename": "Platinum Uninorth"
+}

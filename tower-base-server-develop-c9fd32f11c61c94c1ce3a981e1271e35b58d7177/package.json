@@ -1,0 +1,39 @@
+{
+  "name": "tower-base-server",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "mgConfig": {
+    "moduleName": "tower-base-server",
+    "moduleType": "back"
+  },
+  "author": "Salim Benabbou <benabbousailm@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "magnus-back": "^1.1.6",
+    "magnuscli-shared": "0.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.magnus-ci.duckdns.org/repository/magnus-npm"
+  },
+  "devDependencies": {
+    "async": "^2.0.1",
+    "chokidar": "^1.6.0",
+    "fs": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.4.0",
+    "jasmine-core": "^2.4.1",
+    "jasmine-spec-reporter": "^2.5.0",
+    "mg-release": "^1.0.10",
+    "mg-tasks": "0.0.42",
+    "path": "^0.12.7",
+    "request": "^2.74.0",
+    "require": "^2.4.20",
+    "require-all": "^2.0.0",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.3"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": "1.8.9",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "built/es5"
+  },
+  "filesGlob": [
+    "typings/main.d.ts",
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "files": [
+    "typings/main.d.ts",
+    "src/annotations/action/action_metadata_decorator.ts",
+    "src/annotations/annotations.ts",
+    "src/annotations/event/event_metadata_decorator.ts",
+    "src/annotations/plugin/plugin_metadata_decorator.ts",
+    "src/annotations/pluginParam/plugin_param_metadata_decorator.ts",
+    "src/annotations/pluginProperty/plugin_property_metadata_decorator.ts",
+    "src/contract/plugin_contract.ts",
+    "src/endpoints/endpoint_service.ts",
+    "src/index.ts",
+    "src/lib/command/command_chain_service.ts",
+    "src/lib/folder_utils/folder_utils.ts",
+    "src/lib/lib.ts",
+    "src/lib/livereload/livereload.ts",
+    "src/lib/registry/npm_registry_api.ts",
+    "src/lib/watcher/project_watcher_new.ts",
+    "src/metadata/metadata_model.ts",
+    "src/metadata/metadata_registry.ts",
+    "src/metadata/metadata.ts",
+    "src/mg_content_plugin/mg_content_options.ts",
+    "src/mg_content_plugin/mg_content_plugin.ts",
+    "src/mg_content_plugin/mg_content.ts",
+    "src/serve_static_plugin/serve_static_options.ts",
+    "src/serve_static_plugin/serve_static_plugin.ts",
+    "src/serve_static_plugin/serve_static.ts",
+    "src/serve_static_plugin/tiny_warpper.ts",
+    "src/tasks/socket-events.ts",
+    "src/tasks/task_manager.ts",
+    "src/tasks/task_model.ts",
+    "src/tasks/tasks.ts",
+    "src/tower-base.ts",
+    "src/workspace/workspace_config.ts",
+    "src/workspace/workspace_helper.ts",
+    "src/workspace/workspace_loader.ts",
+    "src/workspace/workspace_model.ts",
+    "src/workspace/workspace_service.ts",
+    "src/workspace/workspace.ts"
+  ]
+}

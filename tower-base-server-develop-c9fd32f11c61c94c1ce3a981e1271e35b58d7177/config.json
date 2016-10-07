@@ -1,0 +1,32 @@
+{
+  "express": {
+    "port": 3000,
+    "bodyParser": {
+      "type": "json"
+    },
+    "staticFiles": [{
+      "prefix": "/",
+      "directory" : "public"
+
+    }],
+    "socket" :{
+      "socketEnabled" : true,
+      "namespaces" :[]
+    }
+  },
+  "controllers.ts": {
+    "errorConsoleLoggingEnabled": true,
+    "errorOverridingMap": true,
+    "controllerDirectories" : ["server/controller"]
+  },
+  "magnus.registry": {
+    "sharedPackages": []
+  },
+  "mongoose": {
+    "url": "mongodb://127.0.0.1:27017/testMgMicro"
+  },
+
+  "redis": {
+    "url": "not_implementd yet"
+  }
+}
